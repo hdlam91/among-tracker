@@ -1,0 +1,52 @@
+<mat-card [ngClass]="state">
+  <div fxFlexLayout="column">
+    <div fxFlexLayout="row">
+      <div fxFlex="40" fxFlexLayout="row">
+        <ng-container *ngIf="isEditing; else displayName">
+          <div class="no-wrap">
+             <h4>
+            <input type="text" [(ngModel)]="name" (keyup.enter)="isEditing = false"/> <button mat-icon-button
+              (click)="isEditing = false">
+              <mat-icon>check</mat-icon>
+            </button>
+             </h4>
+          </div>
+        </ng-container>
+        <ng-template #displayName>
+          <h4>
+            {{name}}
+            <button mat-icon-button (click)="isEditing = true">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </h4>
+        </ng-template>
+      </div>
+      <div fxFlex>
+      </div>
+      <div fxFlex=20 class="state">
+        <h2>
+          {{states[state] | titlecase}}
+        </h2>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center" fxFlexAlign="end">
+      <button mat-mini-fab (click)="setState(states.dead)" color="error" [matTooltip]="states.dead">
+        <mat-icon>clear</mat-icon>
+      </button>
+
+      <button mat-mini-fab (click)="setState(states.innocent)" color="primary" [matTooltip]="states.innocent">
+        <mat-icon>check</mat-icon>
+      </button>
+
+      <button mat-mini-fab (click)="setState(states.sus)" color="warn" [matTooltip]="states.sus">
+        <mat-icon>warning</mat-icon>
+      </button>
+
+      <button mat-mini-fab (click)="setState(states.normal)" color="secondary" [matTooltip]="states.normal">
+        <mat-icon>replay</mat-icon>
+      </button>
+
+    </div>
+  </div>
+
+</mat-card>

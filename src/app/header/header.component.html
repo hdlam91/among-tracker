@@ -1,0 +1,19 @@
+<div fxLayout="row" fxLayoutAlign="space-evenly center">
+  <div fxFlex="33">
+    <img src="assets/logo.png" height="50">
+  </div>
+  <div fxFlex="33">
+    <h1>
+      Among Tracker
+    </h1>
+  </div>
+  <div fxFlex="28"></div>
+  <div fxFlex="5">
+    <!--button mat-icon-button (click)="mapDialog()" [disabled]="true" [matTooltip]="'Set or view map (not yet implemented)'">
+      <mat-icon>maps</mat-icon>
+    </button-->
+    <button mat-icon-button (click)="reset()" [matTooltip]="'Set all players to normal'">
+      <mat-icon>replay</mat-icon>
+    </button>
+  </div>
+</div>

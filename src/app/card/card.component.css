@@ -1,0 +1,19 @@
+.dead {
+  background: darkgray;
+}
+
+.sus {
+  background: darkred;
+}
+
+.innocent {
+  background: darkgreen;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.state {
+  margin-right: 8px;
+}
